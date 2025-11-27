@@ -1,0 +1,23 @@
+---
+const { title } = Astro.props;
+import '../styles/global.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+---
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Tailwind (if using Astro Tailwind integration) -->
+    <!-- This is handled automatically if Tailwind is set up correctly -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
