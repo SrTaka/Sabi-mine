@@ -19,7 +19,7 @@ import Base from '../layouts/Base.astro';
                     <img src="public/images/logo.jpg" alt="ANMACK MINING Logo">
                 </div>
                 <div class="logo-text">
-                    <h1>ANMACK MINING (Pvt/Ltd) </h1>
+                    <h1>ANMACK MINING </h1>
                     <h2>SABI GOLD MINE</h2>
                 </div>
             </div>
@@ -45,7 +45,7 @@ import Base from '../layouts/Base.astro';
         <section class="hero" id="home">
             <div class="hero-content">
                 <h2>Leading Gold Mining Excellence</h2>
-                <p>ANMACK MINING (Pvt) Sabi Gold is committed to sustainable gold mining practices, operational excellence, and community development.</p>
+                <p>ANMACK MINING  (Pvt/Ltd) Sabi Gold is committed to sustainable gold mining practices, operational excellence, and community development.</p>
             </div>
         </section>
 
@@ -330,12 +330,19 @@ import Base from '../layouts/Base.astro';
             </div>
         </div>
 
+        <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
         <script>
             const modal = document.getElementById('contactModal');
             const openBtn = document.getElementById('openContactModal');
             const closeBtn = document.getElementById('closeContactModal');
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
+            const supabaseClient = window.supabase
+                ? window.supabase.createClient(
+                    'https://ausaghcmzxmsmqdxrzmc.supabase.co',
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1c2FnaGNtenhtc21xZHhyem1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MTA4OTEsImV4cCI6MjA3OTA4Njg5MX0.ro3py_CWH3FUQv4_yuvKuhYzCTjzfZof8ELMpMTus5I'
+                )
+                : null;
 
             openBtn.addEventListener('click', () => {
                 modal.style.display = 'flex';
@@ -358,6 +365,12 @@ import Base from '../layouts/Base.astro';
                 submitBtn.textContent = 'Sending...';
                 
                 const formData = new FormData(contactForm);
+                const supabasePayload = {};
+                formData.forEach((value, key) => {
+                    if (value) {
+                        supabasePayload[key] = value;
+                    }
+                });
                 
                 try {
                     const response = await fetch(contactForm.action, {
@@ -367,15 +380,27 @@ import Base from '../layouts/Base.astro';
                             'Accept': 'application/json'
                         }
                     });
-                    
-                    if (response.ok) {
-                        alert('Message sent successfully! We will get back to you soon.');
-                        contactForm.reset();
-                        modal.style.display = 'none';
-                    } else {
-                        alert('Failed to send message. Please try again.');
+                    if (!response.ok) {
+                        throw new Error('Form submission failed');
                     }
+
+                    if (!supabaseClient) {
+                        throw new Error('Supabase client not initialized');
+                    }
+
+                    const { error: dbError } = await supabaseClient
+                        .from('message')
+                        .insert([supabasePayload], { returning: 'minimal' });
+
+                    if (dbError) {
+                        throw dbError;
+                    }
+
+                    alert('Message sent successfully! We will get back to you soon.');
+                    contactForm.reset();
+                    modal.style.display = 'none';
                 } catch (error) {
+                    console.error('Form submission error:', error);
                     alert('An error occurred. Please try again later.');
                 } finally {
                     submitBtn.disabled = false;
@@ -600,4 +625,9 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
             </di
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {new Date().getFullYear()} ANMACK MINING - SABI GOLD MINE. All rights reserved.</p>
+        </div>
+    </footer>
 </Base>
