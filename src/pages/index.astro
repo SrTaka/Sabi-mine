@@ -2,15 +2,6 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Home">
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANMACK MINING - SABI GOLD MINE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">   
-</head>
-<body> 
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -303,15 +294,15 @@ import Base from '../layouts/Base.astro';
             <div class="modal-content">
                 <span class="modal-close" id="closeContactModal">&times;</span>
                 <h3>Send Us a Message</h3>
-                <form id="contactForm" action="https://formsubmit.co/tanatswanewengo@gmail.com" method="POST">
+                <form id="contactForm" action="" method="POST">
                     <input type="hidden" name="_subject" value="New Contact Form Submission - ANMACK MINING">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="#contact">
                     <input type="hidden" name="_captcha" value="false">
                     
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -329,85 +320,6 @@ import Base from '../layouts/Base.astro';
                 </form>
             </div>
         </div>
-
-        <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-        <script>
-            const modal = document.getElementById('contactModal');
-            const openBtn = document.getElementById('openContactModal');
-            const closeBtn = document.getElementById('closeContactModal');
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const supabaseClient = window.supabase
-                ? window.supabase.createClient(
-                    'https://ausaghcmzxmsmqdxrzmc.supabase.co',
-                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1c2FnaGNtenhtc21xZHhyem1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MTA4OTEsImV4cCI6MjA3OTA4Njg5MX0.ro3py_CWH3FUQv4_yuvKuhYzCTjzfZof8ELMpMTus5I'
-                )
-                : null;
-
-            openBtn.addEventListener('click', () => {
-                modal.style.display = 'flex';
-            });
-
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                
-                const formData = new FormData(contactForm);
-                const supabasePayload = {};
-                formData.forEach((value, key) => {
-                    if (value) {
-                        supabasePayload[key] = value;
-                    }
-                });
-                
-                try {
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    if (!response.ok) {
-                        throw new Error('Form submission failed');
-                    }
-
-                    if (!supabaseClient) {
-                        throw new Error('Supabase client not initialized');
-                    }
-
-                    const { error: dbError } = await supabaseClient
-                        .from('message')
-                        .insert([supabasePayload], { returning: 'minimal' });
-
-                    if (dbError) {
-                        throw dbError;
-                    }
-
-                    alert('Message sent successfully! We will get back to you soon.');
-                    contactForm.reset();
-                    modal.style.display = 'none';
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    alert('An error occurred. Please try again later.');
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                }
-            });
-        </script>
 
         <!-- Gallery Section -->
         <section class="gallery" id="gallery">
@@ -436,7 +348,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="operations">
-                        <img src="https://via.placeholder.com/600x400/555555/FFFFFF?text=Underground+Mining" alt="Underground mining operation" class="gallery-img">
+                        <img src="" alt="Underground mining operation" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Underground Operations</div>
                             <div class="gallery-date">March 2024</div>
@@ -445,7 +357,7 @@ import Base from '../layouts/Base.astro';
                     
                     <!-- Company Events Images -->
                     <div class="gallery-item" data-category="events">
-                        <img src="https://via.placeholder.com/600x400/FFD700/000000?text=Safety+Awards" alt="Safety awards ceremony" class="gallery-img">
+                        <img src="" alt="Safety awards ceremony" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Safety Awards Ceremony</div>
                             <div class="gallery-date">May 2024</div>
@@ -453,7 +365,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="events">
-                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Community+Event" alt="Community outreach event" class="gallery-img">
+                        <img src="" alt="Community outreach event" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Community Outreach</div>
                             <div class="gallery-date">February 2024</div>
@@ -462,7 +374,7 @@ import Base from '../layouts/Base.astro';
                     
                     <!-- Facilities Images -->
                     <div class="gallery-item" data-category="facilities">
-                        <img src="https://via.placeholder.com/600x400/555555/FFFFFF?text=Processing+Plant" alt="Gold processing plant" class="gallery-img">
+                        <img src="" alt="Gold processing plant" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Processing Plant</div>
                             <div class="gallery-date">January 2024</div>
@@ -470,7 +382,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="facilities">
-                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Laboratory" alt="Assay laboratory" class="gallery-img">
+                        <img src="" alt="Assay laboratory" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Assay Laboratory</div>
                             <div class="gallery-date">December 2023</div>
@@ -479,7 +391,7 @@ import Base from '../layouts/Base.astro';
                     
                     <!-- Team Images -->
                     <div class="gallery-item" data-category="team">
-                        <img src="https://via.placeholder.com/600x400/FFD700/000000?text=Mining+Team" alt="Mining department team" class="gallery-img">
+                        <img src="" alt="Mining department team" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Mining Department Team</div>
                             <div class="gallery-date">June 2024</div>
@@ -487,7 +399,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="team">
-                        <img src="https://via.placeholder.com/600x400/555555/FFFFFF?text=Management+Team" alt="Management team meeting" class="gallery-img">
+                        <img src="" alt="Management team meeting" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Management Team</div>
                             <div class="gallery-date">May 2024</div>
@@ -496,7 +408,7 @@ import Base from '../layouts/Base.astro';
                     
                     <!-- Additional Images -->
                     <div class="gallery-item" data-category="operations">
-                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Equipment+Maintenance" alt="Equipment maintenance" class="gallery-img">
+                        <img src="" alt="Equipment maintenance" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Equipment Maintenance</div>
                             <div class="gallery-date">April 2024</div>
@@ -504,7 +416,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="events">
-                        <img src="https://via.placeholder.com/600x400/FFD700/000000?text=Training+Session" alt="Employee training session" class="gallery-img">
+                        <img src="" alt="Employee training session" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Safety Training Session</div>
                             <div class="gallery-date">March 2024</div>
@@ -512,7 +424,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="facilities">
-                        <img src="https://via.placeholder.com/600x400/555555/FFFFFF?text=Control+Room" alt="Mine control room" class="gallery-img">
+                        <img src="" alt="Mine control room" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Mine Control Room</div>
                             <div class="gallery-date">February 2024</div>
@@ -520,7 +432,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     
                     <div class="gallery-item" data-category="team">
-                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Engineering+Team" alt="Engineering department" class="gallery-img">
+                        <img src="" alt="Engineering department" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-title">Engineering Department</div>
                             <div class="gallery-date">January 2024</div>
@@ -631,39 +543,3 @@ import Base from '../layouts/Base.astro';
         </div>
     </footer>
 </Base>
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-<script>
-    const {createClient} = supabase
-    // Create a single supabase client for interacting with your database
-    const supabase = createClient('https://ausaghcmzxmsmqdxrzmc.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1c2FnaGNtenhtc21xZHhyem1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MTA4OTEsImV4cCI6MjA3OTA4Njg5MX0.ro3py_CWH3FUQv4_yuvKuhYzCTjzfZof8ELMpMTus5I')
-
-        const form = document.querySelector('#contactForm')
-        form.addEventListener('submit', async (e) => {
-        e.preventDefault()
-
-        const formInputs = form.querySelcetorAll('input, textarea')
-
-        let submission = {}
-
-       formInputs.forEach(input => {
-            const{value, name} = input
-            if (value) {
-                submission[name] = value
-            }
-        })
-
-        const { error } = await supabase.from('message').insert([
-        submission
-        ], {returning: 'minimal'})
-    
-
-        if (error) {
-            console.error('Error submitting form:', error)
-            alert('Error submitting form. Please try again.')
-        } else {
-            console.log('Form submitted successfully:', data)
-            alert('Form submitted successfully!')
-            form.reset()
-        }
-        })
-</script>

@@ -16,8 +16,13 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
     <!-- Tailwind (if using Astro Tailwind integration) -->
     <!-- This is handled automatically if Tailwind is set up correctly -->
+
+    <!-- Supabase client (needed globally for form.js) -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   </head>
   <body>
     <slot />
+    <!-- Page scripts -->
+    <script type="module" src="/src/scripts/form.js"></script>
   </body>
 </html>
