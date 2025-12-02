@@ -631,3 +631,39 @@ import Base from '../layouts/Base.astro';
         </div>
     </footer>
 </Base>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+    const {createClient} = supabase
+    // Create a single supabase client for interacting with your database
+    const supabase = createClient('https://ausaghcmzxmsmqdxrzmc.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1c2FnaGNtenhtc21xZHhyem1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MTA4OTEsImV4cCI6MjA3OTA4Njg5MX0.ro3py_CWH3FUQv4_yuvKuhYzCTjzfZof8ELMpMTus5I')
+
+        const form = document.querySelector('#contactForm')
+        form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        const formInputs = form.querySelcetorAll('input, textarea')
+
+        let submission = {}
+
+       formInputs.forEach(input => {
+            const{value, name} = input
+            if (value) {
+                submission[name] = value
+            }
+        })
+
+        const { error } = await supabase.from('message').insert([
+        submission
+        ], {returning: 'minimal'})
+    
+
+        if (error) {
+            console.error('Error submitting form:', error)
+            alert('Error submitting form. Please try again.')
+        } else {
+            console.log('Form submitted successfully:', data)
+            alert('Form submitted successfully!')
+            form.reset()
+        }
+        })
+</script>
