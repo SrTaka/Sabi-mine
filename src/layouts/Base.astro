@@ -3,13 +3,21 @@ const { title = 'ANMACK MINING' } = Astro.props;
 import '../styles/global.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-const navLinks = [
-  { href: '/Sabi-mine', label: 'Home' },
-  { href: '/Sabi-mine/about', label: 'About' },
-  { href: '/Sabi-mine/departments', label: 'Departments' },
-  { href: '/Sabi-mine/gallery', label: 'Gallery' },
-  { href: '/Sabi-mine/contact', label: 'Contact' }
+// Respect Astro base path (GitHub Pages) in both dev and production
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const routes = [
+  { path: '', label: 'Home' },
+  { path: 'about', label: 'About' },
+  { path: 'departments', label: 'Departments' },
+  { path: 'gallery', label: 'Gallery' },
+  { path: 'contact', label: 'Contact' }
 ];
+
+const navLinks = routes.map(({ path, label }) => ({
+  href: path ? `${base}/${path}` : base || '/',
+  label
+}));
 
 const currentPath = Astro.url.pathname.toLowerCase();
 const currentYear = new Date().getFullYear();
@@ -30,7 +38,7 @@ const currentYear = new Date().getFullYear();
       <div class="container header-shell">
         <a class="brand" href="/">
           <div class="brand-mark">
-            <img src="/images/logo.jpg" alt="ANMACK MINING logo" loading="lazy" />
+            <img src="public/images/logo.jpg" alt="ANMACK MINING logo" loading="lazy" />
           </div>
           <div class="brand-copy">
             <p>ANMACK MINING</p>
@@ -62,7 +70,9 @@ const currentYear = new Date().getFullYear();
     <footer class="site-footer">
       <div class="container footer-shell">
         <div class="footer-brand">
-          <img src="/images/logo.jpg" alt="ANMACK MINING" loading="lazy" />
+          <div class="brand-mark footer-logo">
+            <img src="public/images/logo.jpg" alt="ANMACK MINING" loading="lazy" />
+          </div>
           <p>Leading gold mining excellence rooted in Zimbabwe.</p>
         </div>
         <div class="footer-links">
