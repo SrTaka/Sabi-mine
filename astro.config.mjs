@@ -8,8 +8,8 @@ import react from '@astrojs/react';
 // <username>.github.io/<repo> pattern. Remove `base` when deploying to a
 // custom domain or <username>.github.io root repository.
 export default defineConfig({
-  site: 'https://your-username.github.io/your-repo',
-  base: '/your-repo',
+  site: 'https://SrTaka.github.io/Sabi-mine',
+  base: '/Sabi-mine',
   output: 'static',
   integrations: [react(), tailwind()]
 });

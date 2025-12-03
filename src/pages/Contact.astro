@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Contact">
+  <section class="page-hero contact-hero">
+    <div class="container hero-body">
+      <p class="eyebrow">Contact</p>
+      <h1>Let’s build resilient mining operations together</h1>
+      <p>
+        Reach ANMACK MINING for partnerships, supply-chain discussions, or career opportunities.
+        Our team aims to respond within two business days.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-panel" id="contact">
+    <div class="container contact-shell">
+      <div class="contact-card">
+        <h2>Talk to us</h2>
+        <div class="contact-info">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Sabi Gold Mine, Zvishavane Rutenga Road, Midlands Province, Zimbabwe</p>
+          </div>
+          <div>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+263242740053">+263 242 740053</a>
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@sabimine.com">info@sabimine.com</a>
+          </div>
+          <div>
+            <i class="fas fa-clock"></i>
+            <p>Monday – Friday · 08:00 – 17:00 CAT</p>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <a class="btn secondary" href="https://www.google.com/maps/dir//Sabi+Gold+Mine,+Zvishavane+Rutenga+Road,+Midlands+Province,+Zimbabwe" target="_blank">
+            <i class="fas fa-directions"></i> Visit Us
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" method="POST" action="">
+        <input type="hidden" name="_subject" value="New Contact Form Submission - ANMACK MINING" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="/Contact" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <h3>Send a message</h3>
+        <div class="form-grid">
+          <label>
+            Full Name
+            <input type="text" name="full_name" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <label>
+          Subject
+          <input type="text" name="subject" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn primary" id="submitBtn">Send Message</button>
+      </form>
+    </div>
+  </section>
+</Base>
+

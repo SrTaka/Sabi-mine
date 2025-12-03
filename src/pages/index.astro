@@ -2,544 +2,116 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Home">
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="public/images/logo.jpg" alt="ANMACK MINING Logo">
-                </div>
-                <div class="logo-text">
-                    <h1>ANMACK MINING </h1>
-                    <h2>SABI GOLD MINE</h2>
-                </div>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#home" style="color: black;">Home</a></li>
-                    <li><a href="#about" style="color: black;">About Us</a></li>
-                    <li><a href="#departments" style="color: black;">Departments</a></li>
-                    <li><a href="#contact" style="color: black;">Contact Us</a></li>
-                    <li><a href="#gallery" style="color: black;">Gallery</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Notification Container -->
-    <div id="notificationContainer"></div>
-
-    <!-- Main Homepage Content -->
-    <div id="homepage">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h2>Leading Gold Mining Excellence</h2>
-                <p>ANMACK MINING  (Pvt/Ltd) Sabi Gold is committed to sustainable gold mining practices, operational excellence, and community development.</p>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>About Our Company</h2>
-                    <p>With decades of experience in the mining industry, ANMACK MINING has established itself as a leader in gold extraction and processing.</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Our Mining Heritage</h3>
-                         <p>The Sabi Mine claims were first pegged in 1890 with first recorded production in 1909, specializing in gold mining production. It was acquired through Kimberworth Investments (Pvt) Ltd, a company wholly owned by Zimbabwe Mining Development Cooperation. Along the years since ZMDC took over the mine it has had its equitable portion of successes and challenges. In 2014 the mine closed. It succumbed to high production costs and a large debt that had accumulated over the years. ZMDC declared Sabi insolvent and was placed under Judicial Management in order to pay off the debts without shutting down the mine until it returns to profitability. It was closed until 2017 when it was re-opened under Judicial Management. In 2021, a new investor, Chandiwana Mining Corporation partnered ZMDC to revive Sabi Gold Mine coming up with the name Anmack Mining Pvt Ltd-Sabi Gold Mine. The Mine is located in the Midlands Province of Zimbabwe, in Zvishavane Rutenga Road, 15 km Southeast of Zvishavane.</p>
-                        
-                        <!-- Mission, Vision, and Core Values Section -->
-                        <div class="mission-vision-container">
-                            <div class="mission-card">
-                                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                                <p>Maximization of stakeholders' value through safe exploitation of gold reserves in a cost effective, profitable, sustainable manner and equitably rewarding employees and other stakeholders.</p>
-                            </div>
-                            
-                            <div class="vision-card">
-                                <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                                <p>To become one of the leading consistent gold producers in Zimbabwe.</p>
-                            </div>
-                            
-                            <div class="values-card">
-                                <h3><i class="fas fa-gem"></i> Our Core Values</h3>
-                                <p>Basing on its vision and mission, Sabi Gold Mine is guided by the following values:</p>
-                                <ul class="values-list">
-                                    <li>
-                                        <div class="value-name">Teamwork</div>
-                                        <div class="value-description">Management and employees co-operate to achieve set goals</div>
-                                    </li>
-                                    <li>
-                                        <div class="value-name">Integrity</div>
-                                        <div class="value-description">Professionalism, honesty, transparency, responsibility and ensure safety and security of staff, the business and the environment</div>
-                                    </li>
-                                    <li>
-                                        <div class="value-name">Commitment</div>
-                                        <div class="value-description">Dedicated to achieving and exceeding set targets</div>
-                                    </li>
-                                    <li>
-                                        <div class="value-name">Motivation</div>
-                                        <div class="value-description">Inspire to exceed targets</div>
-                                    </li>
-                                    <li>
-                                        <div class="value-name">Lifelong Learning</div>
-                                        <div class="value-description">Continuous, effective and innovative improvements in our operations</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Departments Section -->
-        <section class="departments" id="departments">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Departments</h2>
-                    <p>Specialized teams working together to ensure operational excellence</p>
-                </div>
-                
-                <div class="departments-grid">
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>HR Department</h3>
-                            <p>Managing our most valuable resource - our people. Recruitment, training, and employee development.</p>
-                            <a href="#hr-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Accounting Department</h3>
-                            <p>Financial management, budgeting, cost control, and financial reporting for all operations.</p>
-                            <a href="#accounting-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>ICT Department</h3>
-                            <p>Technology infrastructure, network management, software development, and IT support.</p>
-                            <a href="#ict-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-ruler-combined"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Survey Department</h3>
-                            <p>Geological mapping, site surveys, exploration data analysis, and resource estimation.</p>
-                            <a href="#survey-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-hard-hat"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Mining Department</h3>
-                            <p>Ore extraction, processing operations, production management, and equipment maintenance.</p>
-                            <a href="#mining-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-warehouse"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Stores Department</h3>
-                            <p>Inventory management, equipment tracking, supply chain, and materials handling.</p>
-                            <a href="#stores-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Engineering Department</h3>
-                            <p>Maintenance of all machinery and equipment across the mine including electrical, fabrication, mechanical and civil sections.</p>
-                            <a href="#engineering-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>SHEQ Department</h3>
-                            <p>Safety, Health, Environment and Quality management ensuring a safe working environment and compliance with regulations.</p>
-                            <a href="#sheq-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Tech Services</h3>
-                            <p>Geology and Survey services including exploration, development, mapping, and resource estimation.</p>
-                            <a href="#tech-services-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Procurement & Stores</h3>
-                            <p>Providing goods and services to all departments and managing inventory across the mine.</p>
-                            <a href="#procurement-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Processing Plant</h3>
-                            <p>Gold processing operations including crushing, elution, CIL, milling and slimes dam management.</p>
-                            <a href="#plant-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Lab/Assay Department</h3>
-                            <p>Qualitative and quantitative analysis of ore samples from geology, exploration and plant operations.</p>
-                            <a href="#lab-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="department-card">
-                        <div class="department-icon">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <div class="department-content">
-                            <h3>Security Department</h3>
-                            <p>Ensuring safety and security across the mine through proactive monitoring and access control.</p>
-                            <a href="#security-department" class="department-link learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Contact Us</h2>
-                    <p>Get in touch with ANMACK MINING for inquiries, partnerships, or career opportunities</p>
-                </div>
-                
-                <div class="contact-container">
-                    <div class="contact-info-card">
-                        <h3>Our Information</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Sabi Gold Mine, Zvishavane Rutenga Road, Midlands Province, Zimbabwe</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+263 242 740053</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@sabimine.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Monday - Friday: 8:00 AM - 5:00 PM</span>
-                            </div>
-                        </div>
-                        <button class="btn" id="openContactModal" style="margin-top: 1.5rem;">
-                            <i class="fas fa-envelope"></i> Send Us a Message
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Modal -->
-        <div id="contactModal" class="modal">
-            <div class="modal-content">
-                <span class="modal-close" id="closeContactModal">&times;</span>
-                <h3>Send Us a Message</h3>
-                <form id="contactForm" action="" method="POST">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - ANMACK MINING">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="#contact">
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <div class="form-group">
-                        <label for="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn" id="submitBtn">Send Message</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Gallery Section -->
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Company Gallery</h2>
-                    <p>Explore our mining operations, events, and achievements through our photo collection</p>
-                </div>
-                
-                <div class="gallery-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="operations">Mining Operations</button>
-                    <button class="filter-btn" data-filter="events">Company Events</button>
-                    <button class="filter-btn" data-filter="facilities">Facilities</button>
-                    <button class="filter-btn" data-filter="team">Our Team</button>
-                </div>
-                
-                <div class="gallery-grid">
-                    <!-- Mining Operations Images -->
-                    <div class="gallery-item" data-category="operations">
-                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Mining+Operation+1" alt="Open pit mining operation" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Open Pit Mining</div>
-                            <div class="gallery-date">April 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="operations">
-                        <img src="" alt="Underground mining operation" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Underground Operations</div>
-                            <div class="gallery-date">March 2024</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Company Events Images -->
-                    <div class="gallery-item" data-category="events">
-                        <img src="" alt="Safety awards ceremony" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Safety Awards Ceremony</div>
-                            <div class="gallery-date">May 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="events">
-                        <img src="" alt="Community outreach event" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Community Outreach</div>
-                            <div class="gallery-date">February 2024</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Facilities Images -->
-                    <div class="gallery-item" data-category="facilities">
-                        <img src="" alt="Gold processing plant" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Processing Plant</div>
-                            <div class="gallery-date">January 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="facilities">
-                        <img src="" alt="Assay laboratory" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Assay Laboratory</div>
-                            <div class="gallery-date">December 2023</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Images -->
-                    <div class="gallery-item" data-category="team">
-                        <img src="" alt="Mining department team" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Mining Department Team</div>
-                            <div class="gallery-date">June 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="team">
-                        <img src="" alt="Management team meeting" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Management Team</div>
-                            <div class="gallery-date">May 2024</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Additional Images -->
-                    <div class="gallery-item" data-category="operations">
-                        <img src="" alt="Equipment maintenance" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Equipment Maintenance</div>
-                            <div class="gallery-date">April 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="events">
-                        <img src="" alt="Employee training session" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Safety Training Session</div>
-                            <div class="gallery-date">March 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="facilities">
-                        <img src="" alt="Mine control room" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Mine Control Room</div>
-                            <div class="gallery-date">February 2024</div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-category="team">
-                        <img src="" alt="Engineering department" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Engineering Department</div>
-                            <div class="gallery-date">January 2024</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section class="map-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Location</h2>
-                    <p>Find us easily with the map below</p>
-                </div>
-                <div class="map-container">
-                    <!-- Updated map with exact location of Sabi Gold Mine -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.231055187773!2d30.08360931544284!3d-20.33159328636751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5d5e5e5e5e5e5%3A0x1ec5d5e5e5e5e5e5!2sSabi%20Gold%20Mine%2C%20Zvishavane%20Rutenga%20Road%2C%20Midlands%20Province%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1620000000000!5m2!1sen!2szw&zoom=15&scrollwheel=false" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="directions-btn-container">
-                    <a href="https://www.google.com/maps/dir//Sabi+Gold+Mine,+Zvishavane+Rutenga+Road,+Midlands+Province,+Zimbabwe" target="_blank" class="directions-btn">
-                        <i class="fas fa-directions"></i> View Directions
-                    </a>
-                </div>
-            </div>
-        </section>
+  <section class="hero home-hero">
+    <div class="container hero-body">
+      <p class="eyebrow">Zimbabwe · Gold Mining</p>
+      <h1>Leading Gold Mining Excellence</h1>
+      <p>
+        ANMACK MINING (Pvt/Ltd) Sabi Gold leads with safe, sustainable operations,
+        disciplined growth, and a commitment to community partnerships.
+      </p>
+      <div class="cta-group">
+        <a class="btn primary" href="/Departments">Explore Departments</a>
+        <a class="btn ghost" href="/Contact">Talk to Our Team</a>
+      </div>
+      <ul class="hero-stats">
+        <li>
+          <span>130+</span>
+          <p>Years of combined heritage</p>
+        </li>
+        <li>
+          <span>24/7</span>
+          <p>Operational readiness</p>
+        </li>
+        <li>
+          <span>100%</span>
+          <p>Safety-first mandate</p>
+        </li>
+      </ul>
     </div>
+  </section>
 
-    <!-- Department Pages -->
-    <!-- HR Department Page -->
-    <section id="hr-department" class="department-page">
-        <div class="department-header">
-            <div class="container">
-                <h2>HR Department</h2>
-                <p>Managing our most valuable resource - our people</p>
-            </div>
+  <section class="split-section" id="about">
+    <div class="container split-shell">
+      <div class="split-copy">
+        <p class="eyebrow">About ANMACK MINING</p>
+        <h2>Responsible extraction, long-term value</h2>
+        <p>
+          We operate Sabi Gold Mine in the Midlands Province, delivering high-quality production
+          while safeguarding the environment and empowering miners, families, and surrounding
+          communities.
+        </p>
+        <p>
+          Our team invests in innovation, workforce development, and transparent governance to
+          ensure Zimbabwe remains an influential voice in global mining.
+        </p>
+        <div class="pill-grid">
+          <span class="pill">Safety management</span>
+          <span class="pill">Sustainable extraction</span>
+          <span class="pill">Community impact</span>
+          <span class="pill">Operational excellence</span>
         </div>
-        <div class="container">
-            <a href="#departments" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Departments</a>
-            <div class="department-content">
-                <div class="department-overview">
-                    <h3>Department Overview</h3>
-                    <p>The Human Resources Department at ANMACK MINING is dedicated to attracting, developing, and retaining the best talent in the mining industry. We focus on creating a positive work environment that promotes safety, professional growth, and employee satisfaction.</p>
-                    <p>Our team works closely with all departments to ensure we have the right people in the right roles, with the skills and support needed to excel in their positions. We are committed to fostering a diverse and inclusive workplace where every employee can thrive.</p>
-                    <p>Human resources department at Anmarck Mining-Sabi Gold Mine is responsible for managing the life cycle of employees as they are the most valuable assets in an organisation. Human resources management is responsible for employee engagement or on boarding, Human Capital development, and employee retention, management of industrial relations, records management and off boarding.</p>
-                    <p>Human Resources department offers wellness services through clinic, guesthouses and runs a pre-school which provides early childhood development learning to pupils. The department engages in Corporate Social Responsibility activities within the surrounding community.</p>
-                </div>
-                
-                <div class="department-details">
-                    <div class="department-services">
-                        <h4>Key Functions</h4>
-                        <ul>
-                            <li>Talent Acquisition & Recruitment</li>
-                            <li>Employee Onboarding & Orientation</li>
-                            <li>Performance Management</li>
-                            <li>Training & Professional Development</li>
-                            <li>Compensation & Benefits Administration</li>
-                            <li>Employee Relations & Engagement</li>
-                            <li>Health & Safety Compliance</li>
-                            <li>Policy Development & Implementation</li>
-                            <li>Wellness Services & Corporate Social Responsibility</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+      <div class="split-card">
+        <h3>2024 Focus Areas</h3>
+        <ul>
+          <li>Modernising underground systems</li>
+          <li>Expanding beneficiation capacity</li>
+          <li>Uplifting community infrastructure</li>
+          <li>Accelerating workforce training</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Accounting Department Page -->
-    <section id="accounting-department" class="department-page">
-        <div class="department-header">
-            <div class="container">
-                <h2>Accounting Department</h2>
-                <p>Financial management and reporting for all operations</p>
-            </div>
-        </div>
-        <div class="container">
-            <a href="#departments" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Departments</a>
-            <div class="department-content">
-                <div class="department-overview">
-                    <h3>Department Overview</h3>
-                    <p>The Accounting Department at ANMACK MINING is responsible for managing the company's financial resources, ensuring accurate financial reporting, and maintaining compliance with all regulatory requirements. Our team provides critical financial insights that support strategic decision-making across the organization.</p>
-                    <p>We maintain rigorous financial controls and implement best practices in accounting to support the sustainable growth of our mining operations while maximizing shareholder value.</p>
-                    <p>The main objectives of the department is recording transactions, managing all accounting records and producing accounting reports. The Finance department at Sabi Gold Mine comprises of the Creditor's office, Cash office, Time office and Accountant's office.</p>
-                </div>
-                
-                <div class="department-details">
-                    <div class="department-services">
-                        <h4>Key Functions</h4>
-                        <ul>
-                            <li>Financial Reporting & Analysis</li>
-                            <li>Budgeting & Forecasting</li>
-                            <li>Cost Control & Management</li>
-                            <li>Accounts Payable & Receivable</li>
-                            <li>Payroll Processing</li>
-                            <li>Tax Planning & Compliance</li>
-                            <li>Internal Controls & Auditing</li>
-                            <li>Capital Expenditure Management</li>
-                            <li>Transaction Recording & Accounting Reports</li>
-                        </ul>
-                    </div>
-                </div>
-            </di
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {new Date().getFullYear()} ANMACK MINING - SABI GOLD MINE. All rights reserved.</p>
-        </div>
-    </footer>
+  <section class="cards-grid">
+    <div class="container cards-shell">
+      <article class="info-card">
+        <i class="fas fa-hard-hat"></i>
+        <h3>Operations</h3>
+        <p>Integrated open-pit and underground mining supported by resilient logistics.</p>
+        <a href="/Departments" class="text-link">See our operations</a>
+      </article>
+      <article class="info-card">
+        <i class="fas fa-users"></i>
+        <h3>People</h3>
+        <p>We invest in expert teams, wellness, and future-ready technical capability.</p>
+        <a href="/About#mission" class="text-link">Understand our culture</a>
+      </article>
+      <article class="info-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Sustainability</h3>
+        <p>Environmental stewardship guides each project, from exploration to closure.</p>
+        <a href="/Gallery" class="text-link">View recent work</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">Visit Us</p>
+        <h2>Our Location</h2>
+        <p>Find Sabi Gold Mine with the interactive map below.</p>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.231055187773!2d30.08360931544284!3d-20.33159328636751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5d5e5e5e5e5e5%3A0x1ec5d5e5e5e5e5e5!2sSabi%20Gold%20Mine%2C%20Zvishavane%20Rutenga%20Road,%20Midlands%20Province,%20Zimbabwe!5e0!3m2!1sen!2szw!4v1620000000000!5m2!1sen!2szw&zoom=15&scrollwheel=false"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="directions-btn-container">
+        <a
+          href="https://www.google.com/maps/dir//Sabi+Gold+Mine,+Zvishavane+Rutenga+Road,+Midlands+Province,+Zimbabwe"
+          target="_blank"
+          class="btn secondary"
+        >
+          <i class="fas fa-directions"></i> View Directions
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
+

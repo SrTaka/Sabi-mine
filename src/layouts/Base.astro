@@ -1,27 +1,90 @@
 ---
-const { title } = Astro.props;
+const { title = 'ANMACK MINING' } = Astro.props;
 import '../styles/global.css';
 import '@fortawesome/fontawesome-free/css/all.css';
----
 
+const navLinks = [
+  { href: '/Sabi-mine', label: 'Home' },
+  { href: '/Sabi-mine/about', label: 'About' },
+  { href: '/Sabi-mine/departments', label: 'Departments' },
+  { href: '/Sabi-mine/gallery', label: 'Gallery' },
+  { href: '/Sabi-mine/contact', label: 'Contact' }
+];
+
+const currentPath = Astro.url.pathname.toLowerCase();
+const currentYear = new Date().getFullYear();
+---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/style.css" />
-
-    <!-- Tailwind (if using Astro Tailwind integration) -->
-    <!-- This is handled automatically if Tailwind is set up correctly -->
-
+    <meta name="description" content="ANMACK MINING - Sabi Gold Mine official website" />
+    <link rel="icon" type="image/png" href="/images/logo.jpg" />
     <!-- Supabase client (needed globally for form.js) -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   </head>
   <body>
-    <slot />
+    <header class="site-header">
+      <div class="container header-shell">
+        <a class="brand" href="/">
+          <div class="brand-mark">
+            <img src="/images/logo.jpg" alt="ANMACK MINING logo" loading="lazy" />
+          </div>
+          <div class="brand-copy">
+            <p>ANMACK MINING</p>
+            <small>SABI GOLD MINE</small>
+          </div>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul>
+            {navLinks.map(({ href, label }) => {
+              const isActive = currentPath === href.toLowerCase();
+              return (
+                <li>
+                  <a href={href} class={`nav-link ${isActive ? 'active' : ''}`}>
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <div class="footer-brand">
+          <img src="/images/logo.jpg" alt="ANMACK MINING" loading="lazy" />
+          <p>Leading gold mining excellence rooted in Zimbabwe.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            {navLinks.map(({ href, label }) => (
+              <li><a href={href}>{label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Visit</h4>
+          <p>Sabi Gold Mine, Zvishavane Rutenga Road, Midlands Province</p>
+          <p><a href="tel:+263242740053">+263 242 740053</a></p>
+          <p><a href="mailto:info@sabimine.com">info@sabimine.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {currentYear} ANMACK MINING - SABI GOLD MINE. All rights reserved.</p>
+      </div>
+    </footer>
+
     <!-- Page scripts -->
     <script type="module" src="/src/scripts/form.js"></script>
   </body>
